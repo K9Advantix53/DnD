@@ -9,10 +9,8 @@ class CharactersContainer extends Component {
     }
   }
 
-
-
   render() {
-    this.state.characters.map((character) => {
+    let all_characters = this.state.characters.map((character) => {
       return(
         <CharacterTile
           key={character}
@@ -23,6 +21,7 @@ class CharactersContainer extends Component {
     return(
       <div>
         TEST
+        {all_characters}
       </div>
     )
   }
