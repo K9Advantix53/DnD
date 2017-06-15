@@ -7,13 +7,22 @@ class MonstersContainer extends Component {
     super(props)
     this.state = {
       monster: {},
-      number: Math.floor((Math.random())*325)
+      number: Math.floor((Math.random())*325),
+      monster_special_abilities: {},
+      monster_actions: {}
     }
     this.handleRandomClick = this.handleRandomClick.bind(this)
   }
 
   handleRandomClick() {
-    this.setState({ number: Math.floor((Math.random())*325) })
+    let new_number;
+    let new_seed_number = this.state.number + Math.floor((Math.random())*325);
+    if(new_seed_number > 325) {
+      new_number = new_seed_number - 325
+    } else {
+      new_number = new_seed_number
+    }
+    this.setState({ number: new_number })
     fetch(`http://www.dnd5eapi.co/api/monsters/${this.state.number}`)
       .then(response => response.json())
       .then(responseData => {
@@ -26,6 +35,8 @@ class MonstersContainer extends Component {
       .then(response => response.json())
       .then(responseData => {
         this.setState({ monster: responseData })
+        this.setState({ monster_special_abilities: responseData.special_abilities })
+        this.setState({ monster_actions: responseData.actions })
       })
   }
 
@@ -53,6 +64,8 @@ class MonstersContainer extends Component {
         </div>
         <div>
           Difficulty: {this.state.monster.challenge_rating}
+        </div>
+        <div>
         </div>
         <button onClick={this.handleRandomClick}>Random</button>
       </div>
