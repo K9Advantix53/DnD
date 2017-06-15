@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router';
 
-class CharacterTile extends Component {
+class CharacterTileDetails extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -10,7 +10,7 @@ class CharacterTile extends Component {
   }
 
   componentWillMount() {
-    fetch(`http://www.dnd5eapi.co/api/classes/${this.props.id}`)
+    fetch(`http://www.dnd5eapi.co/api/classes/${this.props.params.id}`)
       .then(response => response.json())
       .then(responseData => {
         this.setState({ character: responseData })
@@ -18,12 +18,14 @@ class CharacterTile extends Component {
   }
 
   render() {
+    debugger;
     return(
       <div>
-        <Link to={`/characters/${this.props.id}`}>{this.state.character.name}</Link>
+        {this.state.character.name}
+        {this.state.character.hit_die}
       </div>
     )
   }
 }
 
-export default CharacterTile
+export default CharacterTileDetails
