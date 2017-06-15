@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router';
-import CharacterTileDetails from './CharacterTileDetails'
 
 class CharacterTile extends Component {
   constructor(props) {
@@ -21,12 +20,6 @@ class CharacterTile extends Component {
   render() {
     return(
       <div>
-        <CharacterTileDetails
-          key={this.props.id}
-          id={this.props.id}
-          name={this.state.character.name}
-          hit_die={this.state.character.hit_die}
-        />
         <Link to={`/characters/${this.props.id}`}>{this.state.character.name}</Link>
       </div>
     )

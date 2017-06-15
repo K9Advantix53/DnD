@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CharacterTile from '../components/CharacterTile'
+import CharacterTileDetails from '../components/CharacterTileDetails'
 
 class CharactersContainer extends Component {
   constructor(props) {
@@ -18,9 +19,16 @@ class CharactersContainer extends Component {
         />
       )
     })
+    let character = this.state.characters.map((character) => {
+      return(
+        <CharacterTileDetails
+          key={character}
+          id={character}
+        />
+      )
+    })
     return(
       <div>
-        TEST
         {all_characters}
       </div>
     )
