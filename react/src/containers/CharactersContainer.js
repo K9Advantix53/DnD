@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import CharacterTile from '../components/CharacterTile'
 import CharacterTileDetails from '../components/CharacterTileDetails'
+import { Link } from 'react-router';
+
 
 class CharactersContainer extends Component {
   constructor(props) {
@@ -29,6 +31,7 @@ class CharactersContainer extends Component {
     })
     return(
       <div>
+        <Link to={`/monsters`}>Monster Generator</Link>
         {all_characters}
       </div>
     )

@@ -18,7 +18,6 @@ class CharacterTileDetails extends Component {
   }
 
   render() {
-    debugger;
     return(
       <div>
         {this.state.character.name}
