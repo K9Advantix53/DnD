@@ -9,6 +9,7 @@ class MonsterSpecialAbilities extends Component {
   render() {
     return(
       <div>
+        -----------------
         {this.props.desc}
       </div>
     )

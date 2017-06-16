@@ -6,10 +6,9 @@ class MonstersContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      isDataLoaded: false,
       monster: {},
-      number: Math.floor((Math.random())*325),
-      monster_special_abilities: {},
-      monster_actions: {}
+      number: Math.floor((Math.random())*325)
     }
     this.handleRandomClick = this.handleRandomClick.bind(this)
   }
@@ -34,43 +33,61 @@ class MonstersContainer extends Component {
     fetch(`http://www.dnd5eapi.co/api/monsters/${this.state.number}`)
       .then(response => response.json())
       .then(responseData => {
-        this.setState({ monster: responseData })
-        this.setState({ monster_special_abilities: responseData.special_abilities })
-        this.setState({ monster_actions: responseData.actions })
+        this.setState({ isDataLoaded: true, monster: responseData })
       })
   }
 
   render() {
-    return(
-      <div>
-        {this.state.monster.name}
-        <div>
-          Size: {this.state.monster.size}
-        </div>
-        <div>
-          Type: {this.state.monster.type}
-        </div>
-        <div>
-          Alignment: {this.state.monster.alignment}
-        </div>
-        <div>
-          AC: {this.state.monster.armor_class}
-        </div>
-        <div>
-          HP: {this.state.monster.hit_points}
-        </div>
-        <div>
-          Speed: {this.state.monster.speed}
-        </div>
-        <div>
-          Difficulty: {this.state.monster.challenge_rating}
-        </div>
-        <div>
-        </div>
-        <button onClick={this.handleRandomClick}>Random</button>
-      </div>
-    )
+    const { isDataLoaded, monster } = this.state;
+    const monsterProps = { isDataLoaded, monster };
+    return <Monsters isDataLoaded={isDataLoaded} monster={monster} />
   }
+}
+
+function Monsters(props) {
+   const {isDataLoaded, monster} = props;
+   let spec_abilities;
+
+    if (isDataLoaded && monster.special_abilities) {
+      spec_abilities = monster.special_abilities.map((ab) =>
+        <MonsterSpecialAbilities
+          key={ab.desc}
+          desc={ab.desc}
+        />
+      );
+    }
+
+    return (isDataLoaded && spec_abilities && monster.name) ? (
+      <div>
+        <h1>{monster.name}</h1>
+        <div>
+          Size: {monster.size}
+        </div>
+        <div>
+          Type: {monster.type}
+        </div>
+        <div>
+          Alignment: {monster.alignment}
+        </div>
+        <div>
+          AC: {monster.armor_class}
+        </div>
+        <div>
+          HP: {monster.hit_points}
+        </div>
+        <div>
+          Speed: {monster.speed}
+        </div>
+        <div>
+          Difficulty: {monster.challenge_rating}
+        </div>
+        <ul>
+          <h4>Special Abilities</h4>
+          {spec_abilities}
+        </ul>
+      </div>
+    ): <div>loading monster data...</div>;
+
 }
 
 export default MonstersContainer
