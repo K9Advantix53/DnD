@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-class MonsterSpecialAbilities extends Component {
+class MonsterActions extends Component {
   constructor(props) {
     super(props)
   }
@@ -17,4 +17,4 @@ class MonsterSpecialAbilities extends Component {
   }
 }
 
-export default MonsterSpecialAbilities
+export default MonsterActions
