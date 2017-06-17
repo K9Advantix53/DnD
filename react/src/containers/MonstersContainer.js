@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router';
 import MonsterSpecialAbilities from '../components/MonsterSpecialAbilities'
+import MonsterActions from '../components/MonsterActions'
 
 class MonstersContainer extends Component {
   constructor(props) {
@@ -38,56 +39,64 @@ class MonstersContainer extends Component {
   }
 
   render() {
-    const { isDataLoaded, monster } = this.state;
-    const monsterProps = { isDataLoaded, monster };
-    return <Monsters isDataLoaded={isDataLoaded} monster={monster} />
-  }
-}
+    let spec_abilities;
+    let monster_actions;
 
-function Monsters(props) {
-   const {isDataLoaded, monster} = props;
-   let spec_abilities;
-
-    if (isDataLoaded && monster.special_abilities) {
-      spec_abilities = monster.special_abilities.map((ab) =>
+    if (this.state.isDataLoaded && this.state.monster.special_abilities) {
+      spec_abilities = this.state.monster.special_abilities.map((ab) =>
         <MonsterSpecialAbilities
-          key={ab.desc}
           desc={ab.desc}
         />
       );
+      monster_actions = this.state.monster.actions.map((action) =>
+        <MonsterActions
+          desc={action.desc}
+        />
+      )
+    } else if (this.state.isDataLoaded && this.state.monster.actions && this.state.monster.special_abilities == null) {
+      monster_actions = this.state.monster.actions.map((action) =>
+        <MonsterActions
+          desc={action.desc}
+        />
+      )
+      spec_abilities = ['none']
     }
 
-    return (isDataLoaded && spec_abilities && monster.name) ? (
+    return (this.state.isDataLoaded && monster_actions && this.state.monster.name) ? (
       <div>
-        <h1>{monster.name}</h1>
+        {this.state.monster.name}
         <div>
-          Size: {monster.size}
+          Size: {this.state.monster.size}
         </div>
         <div>
-          Type: {monster.type}
+          Type: {this.state.monster.type}
         </div>
         <div>
-          Alignment: {monster.alignment}
+          Alignment: {this.state.monster.alignment}
         </div>
         <div>
-          AC: {monster.armor_class}
+          AC: {this.state.monster.armor_class}
         </div>
         <div>
-          HP: {monster.hit_points}
+          HP: {this.state.monster.hit_points}
         </div>
         <div>
-          Speed: {monster.speed}
+          Speed: {this.state.monster.speed}
         </div>
         <div>
-          Difficulty: {monster.challenge_rating}
+          Difficulty: {this.state.monster.challenge_rating}
         </div>
         <ul>
           <h4>Special Abilities</h4>
           {spec_abilities}
         </ul>
+        <ul>
+          <h4>Actions</h4>
+          {monster_actions}
+        </ul>
       </div>
     ): <div>loading monster data...</div>;
-
+  }
 }
 
 export default MonstersContainer
