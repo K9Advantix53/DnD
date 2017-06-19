@@ -4,6 +4,7 @@ import CharactersContainer from './containers/CharactersContainer'
 import CharacterTile from './components/CharacterTile'
 import CharacterTileDetails from './components/CharacterTileDetails'
 import MonstersContainer from './containers/MonstersContainer'
+import ItemDetails from './components/ItemDetails'
 
 const App = (props) => {
   let routes = (
@@ -11,6 +12,7 @@ const App = (props) => {
       <IndexRoute component={CharactersContainer}/>
       <Route path='characters/:id' component={CharacterTileDetails} />
       <Route path='monsters' component={MonstersContainer} />
+      <Route path='items/:id' component={ItemDetails} />
     </Route>
   )
   return (
