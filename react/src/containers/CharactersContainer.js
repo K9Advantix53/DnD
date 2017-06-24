@@ -34,6 +34,9 @@ class CharactersContainer extends Component {
         <div>
           <Link to={`/equipments`}>Equipments</Link>
         </div>
+        <div>
+          <Link to={`/spells`}>Spells</Link>
+        </div>
         <Link to={`/monsters`}>Monster Generator</Link>
         {all_characters}
       </div>
