@@ -31,6 +31,9 @@ class CharactersContainer extends Component {
     })
     return(
       <div>
+        <div>
+          <Link to={`/equipments`}>Equipments</Link>
+        </div>
         <Link to={`/monsters`}>Monster Generator</Link>
         {all_characters}
       </div>
