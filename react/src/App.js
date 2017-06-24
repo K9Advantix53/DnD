@@ -5,7 +5,9 @@ import CharacterTile from './components/CharacterTile'
 import CharacterTileDetails from './components/CharacterTileDetails'
 import MonstersContainer from './containers/MonstersContainer'
 import EquipmentSearchContainer from './containers/EquipmentSearchContainer'
+import SpellSearchContainer from './containers/SpellSearchContainer'
 import EquipmentTileDetails from './components/EquipmentTileDetails'
+import SpellTileDetails from './components/SpellTileDetails'
 
 const App = (props) => {
   let routes = (
@@ -14,7 +16,9 @@ const App = (props) => {
       <Route path='characters/:id' component={CharacterTileDetails} />
       <Route path='monsters' component={MonstersContainer} />
       <Route path='equipments' component={EquipmentSearchContainer} />
+      <Route path='spells' component={SpellSearchContainer} />
       <Route path='equipments/:id' component={EquipmentTileDetails} />
+      <Route path='spells/:id' component={SpellTileDetails} />
     </Route>
   )
   return (
