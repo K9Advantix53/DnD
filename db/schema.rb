@@ -16,7 +16,29 @@ ActiveRecord::Schema.define(version: 20170624204212) do
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
-    t.string "name", null: false
+    t.string  "name",                         null: false
+    t.string  "class",                        null: false
+    t.string  "race",                         null: false
+    t.integer "level",            default: 0, null: false
+    t.integer "exp",              default: 0
+    t.string  "alignment",                    null: false
+    t.text    "background"
+    t.integer "maximum_hp",                   null: false
+    t.integer "current_hp",                   null: false
+    t.integer "armor_class",                  null: false
+    t.integer "strength",                     null: false
+    t.integer "dexterity",                    null: false
+    t.integer "constitution",                 null: false
+    t.integer "intelligence",                 null: false
+    t.integer "wisdom",                       null: false
+    t.integer "charisma",                     null: false
+    t.integer "strength_mod",                 null: false
+    t.integer "dexterity_mod",                null: false
+    t.integer "constitution_mod",             null: false
+    t.integer "intelligence_mod",             null: false
+    t.integer "wisdom_mod",                   null: false
+    t.integer "charisma_mod",                 null: false
+    t.integer "hit_dice",                     null: false
   end
 
   create_table "equipments", force: :cascade do |t|

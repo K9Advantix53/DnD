@@ -4,4 +4,7 @@ class CharactersController < ApplicationController
 
   def show
   end
+
+  def create
+  end
 end
