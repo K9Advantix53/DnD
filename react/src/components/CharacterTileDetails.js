@@ -29,7 +29,6 @@ class CharacterTileDetails extends Component {
 
   render() {
     let default_start_equip;
-
     if (this.state.isEquipmentLoaded && this.state.character_starting_equipment) {
       default_start_equip = this.state.character_starting_equipment.starting_equipment.map((item) =>
         <CharacterStartingEquipment

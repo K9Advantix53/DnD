@@ -20,12 +20,6 @@ class CharacterStartingEquipment extends Component {
   }
 
   render() {
-    if (this.state.isItemLoaded) {
-      <ItemDetails
-        id={this.props.id}
-        index={this.props.index}
-      />
-    }
     return (this.state.isItemLoaded) ? (
       <div>
         <li>
