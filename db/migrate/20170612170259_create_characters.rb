@@ -28,6 +28,8 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.integer :charisma_mod, null: false
 
       t.integer :hit_dice, null: false
+
+      t.belongs_to :user 
     end
   end
 end
