@@ -16,28 +16,28 @@ ActiveRecord::Schema.define(version: 20170630003225) do
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
-    t.string  "name",                         null: false
-    t.string  "class",                        null: false
-    t.string  "race",                         null: false
+    t.string  "name"
+    t.string  "profession",                   null: false
+    t.string  "race"
     t.integer "level",            default: 0, null: false
     t.integer "exp",              default: 0
-    t.string  "alignment",                    null: false
+    t.string  "alignment"
     t.text    "background"
-    t.integer "maximum_hp",                   null: false
-    t.integer "current_hp",                   null: false
-    t.integer "armor_class",                  null: false
-    t.integer "strength",                     null: false
-    t.integer "dexterity",                    null: false
-    t.integer "constitution",                 null: false
-    t.integer "intelligence",                 null: false
-    t.integer "wisdom",                       null: false
-    t.integer "charisma",                     null: false
-    t.integer "strength_mod",                 null: false
-    t.integer "dexterity_mod",                null: false
-    t.integer "constitution_mod",             null: false
-    t.integer "intelligence_mod",             null: false
-    t.integer "wisdom_mod",                   null: false
-    t.integer "charisma_mod",                 null: false
+    t.integer "maximum_hp"
+    t.integer "current_hp"
+    t.integer "armor_class"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.integer "strength_mod"
+    t.integer "dexterity_mod"
+    t.integer "constitution_mod"
+    t.integer "intelligence_mod"
+    t.integer "wisdom_mod"
+    t.integer "charisma_mod"
     t.integer "hit_dice",                     null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_characters_on_user_id", using: :btree

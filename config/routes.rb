@@ -14,4 +14,10 @@ Rails.application.routes.draw do
       resources :spells
     end
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :characters
+    end
+  end
 end

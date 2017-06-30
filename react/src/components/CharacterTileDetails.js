@@ -11,6 +11,7 @@ class CharacterTileDetails extends Component {
       character_starting_equipment: {},
       character: {}
     }
+    this.handleCreateClick=this.handleCreateClick.bind(this)
   }
 
   componentDidMount() {
@@ -24,6 +25,20 @@ class CharacterTileDetails extends Component {
       .then(responseData => {
         this.setState({ character: responseData, isCharacterLoaded: true })
       })
+  }
+
+  handleCreateClick(event) {
+    event.preventDefault()
+    let payload = {
+      profession: this.state.character.name,
+      hit_dice: this.state.character.hit_die
+    }
+    fetch('/api/v1/characters', {
+      credentials: "same-origin",
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
   }
 
 
@@ -49,6 +64,7 @@ class CharacterTileDetails extends Component {
         <ul>
           {default_start_equip}
         </ul>
+        <button onClick={this.handleCreateClick}>Create Character!</button>
       </div>
     ): <div>loading character data...</div>;
   }
