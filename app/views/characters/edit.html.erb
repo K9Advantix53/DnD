@@ -1,0 +1,32 @@
+<%= form_for(@character) do |f| %>
+  <div class="form1">
+    <div class="field1">
+      <%= f.label :strength %>
+      <%= f.select :strength, @creation_stats %>
+    </div>
+    <div class="field1">
+      <%= f.label :dexterity %>
+      <%= f.select :dexterity, @creation_stats %>
+    </div>
+    <div class="field1">
+      <%= f.label :constitution %>
+      <%= f.select :constitution, @creation_stats %>
+    </div>
+    <div class="field1">
+      <%= f.label :intelligence %>
+      <%= f.select :intelligence, @creation_stats %>
+    </div>
+    <div class="field1">
+      <%= f.label :wisdom %>
+      <%= f.select :wisdom, @creation_stats %>
+    </div>
+    <div class="field1">
+      <%= f.label :charisma %>
+      <%= f.select :charisma, @creation_stats %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit value="Submit Review" %>
+    </div>
+  </div>
+<% end %>

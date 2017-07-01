@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 
 class SpellTileDetails extends Component {
   constructor(props) {
@@ -53,6 +53,9 @@ class SpellTileDetails extends Component {
         <div>
           School: {this.state.spell.school.name}
         </div>
+        <button className="button" onClick={browserHistory.goBack}>
+          Back
+        </button>
       </div>
     ): <div>Loading Spell Data...</div>
   }

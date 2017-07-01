@@ -1,0 +1,30 @@
+Level <%= @character.level %> <%= @character.profession %>
+
+<%= link_to 'Home', root_path %>
+
+<% if @character.level == 0 && @character.strength.nil? %>
+<!-- CHARACTER CREATION -->
+<%= link_to "Distribute Stats", edit_character_path(@character) %>
+
+
+<% else %>
+<!-- CHARACTER PAGE -->
+<div>
+  strength: <%= @character.strength %>
+</div>
+<div>
+  dexterity: <%= @character.dexterity %>
+</div>
+<div>
+  constitution: <%= @character.constitution %>
+</div>
+<div>
+  intelligence: <%= @character.intelligence %>
+</div>
+<div>
+  wisdom: <%= @character.wisdom %>
+</div>
+<div>
+  charisma: <%= @character.charisma %>
+</div>
+<% end %>

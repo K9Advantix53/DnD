@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import MonsterSpecialAbilities from '../components/MonsterSpecialAbilities'
 import MonsterActions from '../components/MonsterActions'
 import LegendaryActions from '../components/LegendaryActions'
@@ -136,6 +136,9 @@ class MonstersContainer extends Component {
           {legend_actions}
         </ul>
         <button onClick={this.handleRandomClick}>Random</button>
+        <button className="button" onClick={browserHistory.goBack}>
+          Back
+        </button>
       </div>
     ): <div>loading monster data...</div>;
   }

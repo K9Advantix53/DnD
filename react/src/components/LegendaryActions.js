@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory, Link } from 'react-router';
 
 class LegendaryActions extends Component {
   constructor(props) {

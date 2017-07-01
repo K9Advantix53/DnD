@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory, Link } from 'react-router';
 import ItemDetails from './ItemDetails'
 
 class CharacterStartingEquipment extends Component {

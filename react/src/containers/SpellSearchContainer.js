@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory, Link } from 'react-router';
 import SearchBar from '../components/SearchBar'
 import SpellTile from '../components/SpellTile'
 import SpellTileDetails from '../components/SpellTileDetails'
@@ -57,6 +57,9 @@ class SpellSearchContainer extends Component {
     })
     return(
       <div>
+        <button className="button" onClick={browserHistory.goBack}>
+          Back
+        </button>
         <SearchBar
           search={this.state.search}
           onChange={this.handleSearchChange}
