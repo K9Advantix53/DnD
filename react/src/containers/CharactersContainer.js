@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CharacterTile from '../components/CharacterTile'
 import CharacterTileDetails from '../components/CharacterTileDetails'
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 
 
 class CharactersContainer extends Component {

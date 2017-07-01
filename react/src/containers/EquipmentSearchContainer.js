@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory, Link } from 'react-router';
 import SearchBar from '../components/SearchBar'
 import EquipmentTile from '../components/EquipmentTile'
 import EquipmentTileDetails from '../components/EquipmentTileDetails'
@@ -57,6 +57,9 @@ class EquipmentSearchContainer extends Component {
     })
     return(
       <div>
+        <button className="button" onClick={browserHistory.goBack}>
+          Back
+        </button>
         <SearchBar
           search={this.state.search}
           onChange={this.handleSearchChange}

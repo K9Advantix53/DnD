@@ -1,5 +1,6 @@
+// NOT BEING USED
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { browserHistory, Link } from 'react-router';
 
 class ItemDetails extends Component {
   constructor(props) {

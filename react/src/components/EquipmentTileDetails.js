@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 
 class EquipmentTileDetails extends Component {
   constructor(props) {
@@ -152,6 +152,9 @@ class EquipmentTileDetails extends Component {
         <div>
           Description: {this.state.equipment.desc}
         </div>
+        <button className="button" onClick={browserHistory.goBack}>
+          Back
+        </button>
       </div>
     ): <div>Loading Equipment Data...</div>
   }

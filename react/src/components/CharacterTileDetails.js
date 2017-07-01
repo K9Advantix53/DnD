@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import CharacterStartingEquipment from './CharacterStartingEquipment'
 
 class CharacterTileDetails extends Component {
@@ -57,8 +57,11 @@ class CharacterTileDetails extends Component {
     return (this.state.isEquipmentLoaded && this.state.isCharacterLoaded) ?(
       <div>
         {this.state.character.name}
+        <button className="button" onClick={browserHistory.goBack}>
+          Back
+        </button>
         <div>
-          {this.state.character.hit_die}
+          Hit die: 1d{this.state.character.hit_die}
         </div>
         <h4>Starting Equipment</h4>
         <ul>
