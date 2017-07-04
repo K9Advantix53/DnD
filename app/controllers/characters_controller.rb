@@ -86,14 +86,18 @@ class CharactersController < ApplicationController
     @character.maximum_hp = 10 + @character.constitution_mod
     @character.current_hp = @character.maximum_hp
 
-    binding.pry
-
     redirect_to character_path(@character)
+  end
+
+  def destroy
+    @character=Character.find(params[:id])
+    @character.destroy
+    redirect_to characters_path
   end
 
   private
 
   def character_params
-    params.require(:character).permit(:strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
+    params.require(:character).permit(:strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :race, :alignment)
   end
 end

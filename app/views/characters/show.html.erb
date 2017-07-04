@@ -27,4 +27,6 @@ Level <%= @character.level %> <%= @character.profession %>
 <div>
   charisma: <%= @character.charisma %>
 </div>
+
+<%= link_to "Delete Character", @character, method: :delete, data: { confirm: 'Are you sure?' }%>
 <% end %>
