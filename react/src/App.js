@@ -8,6 +8,7 @@ import EquipmentSearchContainer from './containers/EquipmentSearchContainer'
 import SpellSearchContainer from './containers/SpellSearchContainer'
 import EquipmentTileDetails from './components/EquipmentTileDetails'
 import SpellTileDetails from './components/SpellTileDetails'
+import DiceContainer from './containers/DiceContainer'
 
 const App = (props) => {
   let routes = (
@@ -22,7 +23,13 @@ const App = (props) => {
     </Route>
   )
   return (
-    <Router history={browserHistory} routes={routes} />
+    <div>
+      <div>
+        <DiceContainer
+        />
+      </div>
+      <Router history={browserHistory} routes={routes} />
+    </div>
   );
 }
 
