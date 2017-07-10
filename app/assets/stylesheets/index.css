@@ -1,0 +1,9 @@
+.diceContainer {
+  display: block;
+  text-align: center;
+}
+
+#login {
+  display: block;
+  text-align: right;
+}
