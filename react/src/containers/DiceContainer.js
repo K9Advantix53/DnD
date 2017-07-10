@@ -39,7 +39,7 @@ class DiceContainer extends Component {
 
   render() {
     return(
-      <div>
+      <div className='diceContainer'>
         <DiceForm
           handleFormSubmit={this.handleFormSubmit}
           handleNumberChange={this.handleNumberChange}
