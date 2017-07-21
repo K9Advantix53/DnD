@@ -64,7 +64,7 @@ class SpellSearchContainer extends Component {
           search={this.state.search}
           onChange={this.handleSearchChange}
         />
-        <div className='results'>
+        <div className='results grid'>
           {search_results}
         </div>
       </div>

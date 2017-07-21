@@ -13,19 +13,37 @@ Level <%= @character.level %> <%= @character.profession %>
   strength: <%= @character.strength %>
 </div>
 <div>
+  strength mod: <%= @character.strength_mod %>
+</div>
+<div>
   dexterity: <%= @character.dexterity %>
+</div>
+<div>
+  dexterity mod: <%= @character.dexterity_mod %>
 </div>
 <div>
   constitution: <%= @character.constitution %>
 </div>
 <div>
+  constitution mod: <%= @character.constitution_mod %>
+</div>
+<div>
   intelligence: <%= @character.intelligence %>
+</div>
+<div>
+  intelligence mod: <%= @character.intelligence_mod %>
 </div>
 <div>
   wisdom: <%= @character.wisdom %>
 </div>
 <div>
+  wisdom mod: <%= @character.wisdom_mod %>
+</div>
+<div>
   charisma: <%= @character.charisma %>
+</div>
+<div>
+  charisma mod: <%= @character.charisma_mod %>
 </div>
 
 <%= link_to "Delete Character", @character, method: :delete, data: { confirm: 'Are you sure?' }%>

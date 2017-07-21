@@ -9,7 +9,7 @@ class SpellTile extends Component {
   render() {
     return(
       <div>
-        <li>
+        <li className='tile'>
           <Link to={`/spells/${this.props.id}`}>{this.props.name}</Link>
         </li>
       </div>
