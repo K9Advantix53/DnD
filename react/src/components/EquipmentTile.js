@@ -9,7 +9,7 @@ class EquipmentTile extends Component {
   render() {
     return(
       <div>
-        <li>
+        <li className='tile'>
           <Link to={`/equipments/${this.props.id}`}>{this.props.name}</Link>
         </li>
       </div>
