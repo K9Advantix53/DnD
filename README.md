@@ -17,3 +17,19 @@ $ npm start
 
 ## Technologies in this Project
 This project is built using **React on Rails**. This project was mainly a way for me to explore external APIs ([dnd 5e API](http://dnd5eapi.co/)) thouroughly. It also allowed me to learn some frontend features for React.js such as the conditional loaders based off of component state. Due to the incomplete nature of the [dnd 5e API](http://dnd5eapi.co/), I had to use some hack-y code to get all the data consistently.
+
+## ToDo List:
+
+- [x] get all data from API
+- [x] character creation to postgres database
+- [ ] inventory join table
+- [ ] spellbook join table
+- [ ] party creation for ptLvl
+- [x] monster generator
+- [ ] monster encounter generator based on party level
+- [x] character creation info
+- [x] dice roller (all dices)
+- [x] inventory search engine
+- [x] spell search engine
+- [x] facebook omniauth
+- [ ] frontend!!
