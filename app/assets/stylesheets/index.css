@@ -7,3 +7,7 @@
   display: block;
   text-align: right;
 }
+
+div {
+  padding-bottom: 2vh;
+}
